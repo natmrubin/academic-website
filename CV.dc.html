@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     body { margin: 0; background: #f3f2f2; }
     a { color: #7d5411; text-decoration: none; }
@@ -24,69 +26,65 @@
     <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 18px; margin-right: auto;">Nat Rubin</div>
     <a href="Home.dc.html" style="font-size: 14px; color: #201f1d;">Home</a>
     <a href="Working Papers.dc.html" style="font-size: 14px; color: #201f1d;">Working Papers</a>
-    <a href="Publications.dc.html" style="font-size: 14px; color: #201f1d;">Publications</a>
     <a href="CV.dc.html" style="font-size: 14px; color: #b68235;">CV</a>
     <a href="Contact.dc.html" style="font-size: 14px; color: #201f1d;">Contact</a>
   </nav>
 
   <section style="max-width: 780px; margin: 0 auto; padding: 55px 36.8px 92px;">
-    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 18.4px; flex-wrap: wrap; margin-bottom: 36.8px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 18.4px; flex-wrap: wrap; margin-bottom: 9.2px;">
       <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 34px; margin: 0;">Curriculum Vitae</h1>
-      <a href="/cv-nat-rubin.pdf" style="display: inline-flex; align-items: center; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 14px; padding: 9.2px 16.5px; border: 1px solid #b68235; border-radius: 4px; color: #b68235;">↓ Download PDF</a>
+      <a href="uploads/Rubin_CV_July26.pdf" target="_blank" style="display: inline-flex; align-items: center; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 14px; padding: 9.2px 16.5px; border: 1px solid #b68235; border-radius: 4px; color: #b68235;">↓ Download PDF</a>
     </div>
 
     <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Education</h2>
     <div style="margin-bottom: 27.6px;">
-      <div style="display: flex; justify-content: space-between; font-size: 15px; margin-bottom: 4px;"><span>Ph.D., Political Science, Columbia University</span><span style="color: rgba(32,31,29,0.6);">2022 – present</span></div>
-      <div style="display: flex; justify-content: space-between; font-size: 15px;"><span>B.A., Government &amp; Statistics, Dartmouth College</span><span style="color: rgba(32,31,29,0.6);">2018 – 2022</span></div>
+      <div style="margin-bottom: 13.8px;">
+        <div style="display: flex; justify-content: space-between; font-size: 15px; font-weight: 600;"><span>Columbia University</span></div>
+        <div style="font-size: 15px;">Ph.D. Political Science <span style="color: rgba(32,31,29,0.6);">(Expected Summer 2027)</span></div>
+        <div style="font-size: 15px;">M.Phil. Political Science (2026)</div>
+        <div style="font-size: 15px;">M.A. Political Science (2024)</div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 15px; font-weight: 600;"><span>Reed College</span></div>
+        <div style="font-size: 15px;">B.A. Political Science (2020)</div>
+      </div>
     </div>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Fields</h2>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 27.6px;">
-      <sc-for list="{{ fields }}" as="f" hint-placeholder-count="4">
-        <span style="font-size: 13px; padding: 5px 12px; border: 1px solid #b68235; border-radius: 3px; color: #b68235;">{{ f }}</span>
-      </sc-for>
-    </div>
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Book Chapters</h2>
+    <p style="font-size: 15px; text-align: justify; margin: 0 0 27.6px;">Christian Breunig and Chris Koski with Nat Rubin. "How Interests and Executives Set Public Policy in Four States." In: <em>Means, Motives and Opportunities: How Executives and Interest Groups Set Public Policy.</em> Cambridge University Press, 2024.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Awards &amp; Fellowships</h2>
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Works in Progress</h2>
+    <div style="font-size: 15px; margin-bottom: 8px;">Dissertation: <em>Essays in Carceral State Politics</em></div>
+    <ul style="font-size: 15px; margin: 0 0 13.8px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;">"Why Enforce? Police Discretion Under Non-Prosecution Policies"</li>
+      <li style="margin-bottom: 6px;">"The Digital Haystack: Digital Surveillance, Processing Delays, and the Quality of Justice"</li>
+      <li style="margin-bottom: 6px;">"Election Cycles in Criminal Sentencing"</li>
+    </ul>
+    <p style="font-size: 15px; text-align: justify; margin: 0 0 27.6px;">"Do Retention Elections Create Cycles in Criminal Sentencing? An Out-of-Sample Replication" with Donald P. Green.</p>
+
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Teaching</h2>
     <ul style="font-size: 15px; margin: 0 0 27.6px; padding-left: 20px;">
-      <sc-for list="{{ awards }}" as="a" hint-placeholder-count="3">
-        <li style="margin-bottom: 6px;">{{ a }}</li>
-      </sc-for>
+      <li style="margin-bottom: 6px;">Spring 2026: "American Urban Politics," TA for Carlos Vargas-Ramos</li>
+      <li style="margin-bottom: 6px;">Fall 2025: "Voting and Political Behavior," TA for Yamil Velez</li>
+      <li style="margin-bottom: 6px;">Spring 2025: "Judicial Politics," TA for Jeff Lax</li>
+      <li style="margin-bottom: 6px;">Fall 2024: "Voting and American Politics," TA for Robert Erikson</li>
+      <li style="margin-bottom: 6px;">Spring 2024: "Race and the Carceral State," TA for Andrew McCall</li>
+      <li style="margin-bottom: 6px;">Fall 2023: "Data Science for Political Analytics," TA for Greg Wawro</li>
     </ul>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Presentations</h2>
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Conferences &amp; Presentations</h2>
     <ul style="font-size: 15px; margin: 0; padding-left: 20px;">
-      <sc-for list="{{ talks }}" as="t" hint-placeholder-count="3">
-        <li style="margin-bottom: 6px;">{{ t }}</li>
-      </sc-for>
+      <li style="margin-bottom: 6px;">2026: Midwest Political Science Association Annual Conference (University of Chicago), Political Science Graduate Student Seminar (Columbia University)</li>
+      <li style="margin-bottom: 6px;">2025: Midwest Political Science Association Annual Conference (University of Chicago), American Politics Graduate Student Workshop (Columbia University)</li>
+      <li style="margin-bottom: 6px;">2024: American Political Science Association Annual Conference (Philadelphia), Mini-APSA (Columbia University)</li>
+      <li style="margin-bottom: 6px;">2023: American Politics Graduate Student Workshop (Columbia University)</li>
     </ul>
   </section>
 
-  <footer style="max-width: 900px; margin: 0 auto; padding: 27.6px 36.8px 55px; font-size: 13px; color: rgba(32,31,29,0.55); text-align: center; border-top: 1px solid rgba(32,31,29,0.16);">© 2026 Nat Rubin · <a href="mailto:nrubin@columbia.edu">nrubin@columbia.edu</a></footer>
+  <footer style="max-width: 900px; margin: 0 auto; padding: 27.6px 36.8px 55px; font-size: 13px; color: rgba(32,31,29,0.55); text-align: center; border-top: 1px solid rgba(32,31,29,0.16);">© 2026 Nat Rubin</footer>
 
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      fields: ["Comparative Politics", "Political Behavior", "Research Methods", "American Politics"],
-      awards: [
-        "Columbia GSAS Presidential Fellowship (2022 – 2026)",
-        "APSA Comparative Politics Best Paper Award, Honorable Mention (2025)",
-        "Dartmouth Rockefeller Center Public Policy Prize (2022)"
-      ],
-      talks: [
-        "American Political Science Association Annual Meeting (2025)",
-        "Midwest Political Science Association Conference (2024, 2025)",
-        "Columbia Comparative Politics Workshop (2023, 2024, 2025)"
-      ]
-    };
-  }
-}
-
-</script>
 </body>
 </html>
