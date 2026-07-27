@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body { margin: 0; background: #f3f2f2; }
+    a { color: #7d5411; text-decoration: none; }
+    a:hover { color: #b68235; text-decoration: underline; }
+    ::selection { background: rgba(182,130,53,0.3); }
+  </style>
+</helmet>
+
+<div style="font-family: 'Lora', serif; color: #201f1d; line-height: 1.6;">
+
+  <nav style="display: flex; align-items: center; gap: 27.6px; padding: 13.8px 36.8px; border-bottom: 1px solid rgba(32,31,29,0.16);">
+    <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 18px; margin-right: auto;">Nat Rubin</div>
+    <a href="Home.dc.html" style="font-size: 14px; color: #201f1d;">Home</a>
+    <a href="Working Papers.dc.html" style="font-size: 14px; color: #201f1d;">Working Papers</a>
+    <a href="Publications.dc.html" style="font-size: 14px; color: #201f1d;">Publications</a>
+    <a href="CV.dc.html" style="font-size: 14px; color: #b68235;">CV</a>
+    <a href="Contact.dc.html" style="font-size: 14px; color: #201f1d;">Contact</a>
+  </nav>
+
+  <section style="max-width: 780px; margin: 0 auto; padding: 55px 36.8px 92px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 18.4px; flex-wrap: wrap; margin-bottom: 36.8px;">
+      <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 34px; margin: 0;">Curriculum Vitae</h1>
+      <a href="/cv-nat-rubin.pdf" style="display: inline-flex; align-items: center; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 14px; padding: 9.2px 16.5px; border: 1px solid #b68235; border-radius: 4px; color: #b68235;">↓ Download PDF</a>
+    </div>
+
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Education</h2>
+    <div style="margin-bottom: 27.6px;">
+      <div style="display: flex; justify-content: space-between; font-size: 15px; margin-bottom: 4px;"><span>Ph.D., Political Science, Columbia University</span><span style="color: rgba(32,31,29,0.6);">2022 – present</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 15px;"><span>B.A., Government &amp; Statistics, Dartmouth College</span><span style="color: rgba(32,31,29,0.6);">2018 – 2022</span></div>
+    </div>
+
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Fields</h2>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 27.6px;">
+      <sc-for list="{{ fields }}" as="f" hint-placeholder-count="4">
+        <span style="font-size: 13px; padding: 5px 12px; border: 1px solid #b68235; border-radius: 3px; color: #b68235;">{{ f }}</span>
+      </sc-for>
+    </div>
+
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Awards &amp; Fellowships</h2>
+    <ul style="font-size: 15px; margin: 0 0 27.6px; padding-left: 20px;">
+      <sc-for list="{{ awards }}" as="a" hint-placeholder-count="3">
+        <li style="margin-bottom: 6px;">{{ a }}</li>
+      </sc-for>
+    </ul>
+
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; margin: 0 0 13.8px;">Presentations</h2>
+    <ul style="font-size: 15px; margin: 0; padding-left: 20px;">
+      <sc-for list="{{ talks }}" as="t" hint-placeholder-count="3">
+        <li style="margin-bottom: 6px;">{{ t }}</li>
+      </sc-for>
+    </ul>
+  </section>
+
+  <footer style="max-width: 900px; margin: 0 auto; padding: 27.6px 36.8px 55px; font-size: 13px; color: rgba(32,31,29,0.55); text-align: center; border-top: 1px solid rgba(32,31,29,0.16);">© 2026 Nat Rubin · <a href="mailto:nrubin@columbia.edu">nrubin@columbia.edu</a></footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      fields: ["Comparative Politics", "Political Behavior", "Research Methods", "American Politics"],
+      awards: [
+        "Columbia GSAS Presidential Fellowship (2022 – 2026)",
+        "APSA Comparative Politics Best Paper Award, Honorable Mention (2025)",
+        "Dartmouth Rockefeller Center Public Policy Prize (2022)"
+      ],
+      talks: [
+        "American Political Science Association Annual Meeting (2025)",
+        "Midwest Political Science Association Conference (2024, 2025)",
+        "Columbia Comparative Politics Workshop (2023, 2024, 2025)"
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

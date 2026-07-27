@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body { margin: 0; background: #f3f2f2; }
+    a { color: #7d5411; text-decoration: none; }
+    a:hover { color: #b68235; text-decoration: underline; }
+    ::selection { background: rgba(182,130,53,0.3); }
+  </style>
+</helmet>
+
+<div style="font-family: 'Lora', serif; color: #201f1d; line-height: 1.6;">
+
+  <nav style="display: flex; align-items: center; gap: 27.6px; padding: 13.8px 36.8px; border-bottom: 1px solid rgba(32,31,29,0.16);">
+    <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 18px; margin-right: auto;">Nat Rubin</div>
+    <a href="Home.dc.html" style="font-size: 14px; color: #201f1d;">Home</a>
+    <a href="Working Papers.dc.html" style="font-size: 14px; color: #b68235;">Working Papers</a>
+    <a href="Publications.dc.html" style="font-size: 14px; color: #201f1d;">Publications</a>
+    <a href="CV.dc.html" style="font-size: 14px; color: #201f1d;">CV</a>
+    <a href="Contact.dc.html" style="font-size: 14px; color: #201f1d;">Contact</a>
+  </nav>
+
+  <section style="max-width: 780px; margin: 0 auto; padding: 55px 36.8px 92px;">
+    <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 34px; margin: 0 0 9.2px;">Working Papers</h1>
+    <p style="font-size: 15px; color: rgba(32,31,29,0.65); margin: 0 0 36.8px;">Drafts and works in progress. Comments always welcome.</p>
+
+    <sc-for list="{{ papers }}" as="paper" hint-placeholder-count="3">
+      <div style="padding: 27.6px 0; border-bottom: 1px solid rgba(32,31,29,0.16);">
+        <div style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d5411; margin-bottom: 6px;">{{ paper.status }}</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 22px; margin: 0 0 6px; line-height: 1.25;">{{ paper.title }}</h2>
+        <div style="font-size: 14px; color: rgba(32,31,29,0.6); margin-bottom: 13.8px;">{{ paper.coauthors }}</div>
+        <p style="font-size: 15px; text-align: justify; margin: 0 0 13.8px;">{{ paper.abstract }}</p>
+        <div style="display: flex; gap: 18.4px; font-size: 14px;">
+          <a href="{{ paper.pdfLink }}">Download PDF</a>
+          <a href="{{ paper.slidesLink }}">Slides</a>
+        </div>
+      </div>
+    </sc-for>
+  </section>
+
+  <footer style="max-width: 900px; margin: 0 auto; padding: 27.6px 36.8px 55px; font-size: 13px; color: rgba(32,31,29,0.55); text-align: center; border-top: 1px solid rgba(32,31,29,0.16);">© 2026 Nat Rubin · <a href="mailto:nrubin@columbia.edu">nrubin@columbia.edu</a></footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      papers: [
+        {
+          status: "Job Market Paper",
+          title: "Backsliding by Degrees: Executive Aggrandizement and Public Opinion",
+          coauthors: "Solo-authored",
+          abstract: "How much democratic erosion will voters tolerate before they punish it at the ballot box? Using survey experiments fielded across six countries, I show that voters penalize overt power grabs but largely ignore incremental ones — even when the cumulative effect is identical. This asymmetry helps explain why gradual backsliding so often succeeds where a single dramatic move would fail.",
+          pdfLink: "#", slidesLink: "#"
+        },
+        {
+          status: "Draft — comments welcome",
+          title: "Partisan Cues and Institutional Trust After Contested Elections",
+          coauthors: "with M. Okafor",
+          abstract: "We study how losing-party voters update their trust in electoral institutions after a contested election, using panel data spanning three election cycles in four democracies. Trust rebounds faster when co-partisan elites concede publicly, suggesting elite cues matter more than the underlying facts of the dispute.",
+          pdfLink: "#", slidesLink: "#"
+        },
+        {
+          status: "Work in progress",
+          title: "Local News Deserts and Split-Ticket Voting",
+          coauthors: "with M. Okafor and R. Tan",
+          abstract: "We examine whether the closure of local newspapers changes how often voters split their tickets between national and local races, using the staggered timing of newsroom closures across U.S. counties as a natural experiment.",
+          pdfLink: "#", slidesLink: "#"
+        }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
