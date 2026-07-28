@@ -5,14 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nat Rubin</title>
 <style>
-  body { margin: 0; }
+  body { margin: 0; background: #8f8558; }
   a:visited { filter: brightness(0.85); }
+
+  .card {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #2e2a1a;
+    max-width: 760px;
+    margin: 24px auto;
+    background: #f1e8d3;
+    border: 2px outset #d8d8d8;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.35);
+  }
+
+  .badges {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+
+  /* Sidebar + content layout */
+  .layout { width: 100%; border-collapse: collapse; }
+  .sidebar {
+    width: 150px;
+    background: #ded0ab;
+    border-right: 1px solid #b8a878;
+    padding: 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    vertical-align: top;
+  }
+  .main-content { padding: 20px 26px; vertical-align: top; }
+
+  @media (max-width: 620px) {
+    .card {
+      margin: 0;
+      border-left: none;
+      border-right: none;
+      box-shadow: none;
+    }
+
+    /* Collapse table layout to stacked blocks */
+    .layout, .layout tbody, .layout tr { display: block; width: 100%; }
+
+    .sidebar {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      border-right: none;
+      border-bottom: 1px solid #b8a878;
+      padding: 10px 16px;
+    }
+
+    /* Turn vertical sidebar nav into a horizontal strip */
+    .sidebar-inner { display: flex; align-items: baseline; gap: 0; flex-wrap: wrap; }
+    .sidebar-heading { margin-right: 12px; margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+    .sidebar-link { display: inline; margin-bottom: 0; margin-right: 12px; }
+
+    .main-content { display: block; width: 100%; box-sizing: border-box; padding: 16px; }
+  }
 </style>
 </head>
 <body>
 
-<div style="background: #8f8558; min-height: 100%; padding: 1px 0;">
-<div style="font-family: Georgia, 'Times New Roman', serif; color: #2e2a1a; max-width: 760px; margin: 24px auto; background: #f1e8d3; border: 2px outset #d8d8d8; box-shadow: 3px 3px 8px rgba(0,0,0,0.35);">
+<div class="card">
 
   <table width="100%" style="background: #6b2b2b; border-bottom: 4px solid #c3b091;">
     <tr>
@@ -38,21 +97,23 @@
   <div style="text-align: center; padding: 30px 24px 16px; border-bottom: 1px solid #b8a878;">
     <h1 style="font-family: Georgia, 'Times New Roman', serif; font-size: 28px; color: #6b2b2b; margin: 0 0 6px; letter-spacing: 0.02em;">Nat Rubin</h1>
     <div style="font-size: 14px; color: #5a5238; margin-bottom: 10px;">Ph.D. Candidate, Department of Political Science<br>Columbia University</div>
-    <div style="display: flex; justify-content: center; gap: 14px; font-family: 'Courier New', monospace; font-size: 13px;">
+    <div class="badges">
       <span style="background: #6b2b2b; color: #f0e6cc; padding: 5px 12px; border: 2px outset rgba(255,255,255,0.4);">nmr2162 [at] columbia.edu</span>
       <a href="https://github.com/natmrubin" target="_blank" style="background: #6b2b2b; color: #f0e6cc; padding: 5px 12px; border: 2px outset rgba(255,255,255,0.4); text-decoration: none;">github.com/natmrubin</a>
     </div>
   </div>
 
-  <table width="100%" style="border-collapse: collapse;">
-    <tr valign="top">
-      <td width="150" style="background: #ded0ab; border-right: 1px solid #b8a878; padding: 16px; font-family: 'Courier New', monospace; font-size: 13px;">
-        <div style="font-weight: bold; color: #6b2b2b; margin-bottom: 10px; border-bottom: 1px solid #c3b091; padding-bottom: 4px;">CONTENTS</div>
-        <div style="margin-bottom: 8px;"><a href="#about" style="color: #6b2b2b;">About</a></div>
-        <div style="margin-bottom: 8px;"><a href="#papers" style="color: #6b2b2b;">Working Papers</a></div>
-        <div style="margin-bottom: 8px;"><a href="#cv" style="color: #6b2b2b;">Curriculum Vitae</a></div>
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+          <div class="sidebar-heading" style="font-weight: bold; color: #6b2b2b; margin-bottom: 10px; border-bottom: 1px solid #c3b091; padding-bottom: 4px;">CONTENTS</div>
+          <div class="sidebar-link" style="margin-bottom: 8px;"><a href="#about" style="color: #6b2b2b;">About</a></div>
+          <div class="sidebar-link" style="margin-bottom: 8px;"><a href="#papers" style="color: #6b2b2b;">Working Papers</a></div>
+          <div class="sidebar-link" style="margin-bottom: 8px;"><a href="#cv" style="color: #6b2b2b;">Curriculum Vitae</a></div>
+        </div>
       </td>
-      <td style="padding: 20px 26px;">
+      <td class="main-content">
 
         <h2 id="about" style="font-family: Georgia, 'Times New Roman', serif; font-size: 17px; color: #6b2b2b; border-bottom: 2px solid #c3b091; padding-bottom: 4px; margin-top: 0;">About</h2>
         <p style="font-size: 14px; line-height: 1.65; text-align: justify; margin: 10px 0 14px;">Hi, I'm Nat! I am currently a Ph.D. candidate in the Department of Political Science at Columbia University, focusing on elite behavior in the American criminal-legal system. My dissertation project examines the human logic behind carceral outcomes: how police officers factor prosecutorial policy into arrest decisions, whether ever-greater volumes of digital evidence influence the speed and quality of prosecution, and the influence of selection and appointment systems on the sentencing decisions of judges. I care a lot about doing careful, causally-identified observational work that speaks to the everyday exercise of state power.</p>
@@ -131,7 +192,5 @@
   <div style="background: #6b2b2b; color: #c3b091; font-family: 'Courier New', monospace; font-size: 11px; text-align: center; padding: 10px;">© 2026 Nat Rubin</div>
 
 </div>
-</div>
-
 </body>
 </html>
