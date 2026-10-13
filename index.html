@@ -5,7 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nat Rubin</title>
 <style>
-  body { margin: 0; background: #c0c0c0; }
+  body {
+    margin: 0;
+    background-color: #c0c0c0;
+    background-image: radial-gradient(#a8a8a8 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
   a:visited { filter: brightness(0.85); }
 
   .card {
@@ -26,6 +31,75 @@
     font-size: 13px;
     flex-wrap: wrap;
   }
+
+  /* Window-style title bar section headers */
+  .titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(to right, #000080, #1084d0);
+    padding: 3px 4px 3px 8px;
+    margin: 0 0 12px;
+    letter-spacing: 0.04em;
+  }
+  .titlebar-controls { display: flex; gap: 2px; }
+  .titlebar-controls span {
+    display: inline-block;
+    width: 14px; height: 12px;
+    line-height: 11px;
+    font-size: 10px;
+    text-align: center;
+    color: #000000;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+  }
+
+  /* Raised gray buttons */
+  .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+    padding: 3px 12px;
+  }
+  .btn:hover { background: #d4d4d4; }
+  .btn:active { border-style: inset; }
+
+  /* Job market paper callout */
+  .jmp { border: 2px solid #000080; background: #fffff4; margin: 4px 0 22px; }
+  .jmp-banner {
+    background: #ffd700;
+    color: #000080;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding: 4px;
+    border-bottom: 2px solid #000080;
+  }
+  .jmp-body { padding: 12px 14px; }
+  .jmp-body::after { content: ""; display: block; clear: both; }
+
+  /* Teaser figure */
+  .teaser {
+    float: right;
+    width: 230px;
+    margin: 2px 0 8px 14px;
+    background: #ffffff;
+    border: 2px inset #d8d8d8;
+    padding: 4px;
+  }
+  .teaser img { display: block; width: 100%; height: auto; }
+  .teaser-caption { font-family: 'Courier New', monospace; font-size: 10px; color: #555555; margin-top: 4px; line-height: 1.35; }
 
   /* Sidebar + content layout */
   .layout { width: 100%; border-collapse: collapse; }
@@ -66,6 +140,8 @@
     .sidebar-link { display: inline; margin-bottom: 0; margin-right: 12px; }
 
     .main-content { display: block; width: 100%; box-sizing: border-box; padding: 16px; }
+
+    .teaser { float: none; width: auto; max-width: 320px; margin: 0 auto 12px; }
   }
 </style>
 </head>
@@ -114,30 +190,39 @@
       </td>
       <td class="main-content">
 
-        <h2 id="about" style="font-family: Georgia, 'Times New Roman', serif; font-size: 17px; color: #000080; border-bottom: 2px solid #c0c0c0; padding-bottom: 4px; margin-top: 0;">About</h2>
-        <p style="font-size: 14px; line-height: 1.65; text-align: justify; margin: 10px 0 14px;">Hi, I'm Nat! I am currently a Ph.D. candidate in the Department of Political Science at Columbia University, focusing on the intersection of institutions and behavior in the American criminal-legal system. My dissertation project examines how elite choices shape carceral outcomes: how police officers factor prosecutorial policy into arrest decisions, whether ever-greater volumes of digital evidence influence the speed and quality of prosecution, and the influence of selection and appointment systems on the sentencing decisions of judges. I am interested in causally-identified observational work that speaks to the everyday exercise of state power.</p>
-        <p style="font-size: 14px; line-height: 1.65; text-align: justify; margin: 0 0 24px;">Before Columbia, I studied Political Science at Reed College and worked on political campaigns across the Pacific Northwest. Outside of working hours, I can often be found at one of New York's many arthouse movie theaters!</p>
+        <h2 id="about" class="titlebar"><span>About</span><span class="titlebar-controls" aria-hidden="true"><span>_</span><span>□</span><span>×</span></span></h2>
+        <p style="font-size: 14px; line-height: 1.65; margin: 10px 0 14px;">Hi, I'm Nat! I am currently a Ph.D. candidate in the Department of Political Science at Columbia University, focusing on the intersection of institutions and behavior in the American criminal-legal system. My dissertation project examines how elite choices shape carceral outcomes: how police officers factor prosecutorial policy into arrest decisions, whether ever-greater volumes of digital evidence influence the speed and quality of prosecution, and the influence of selection and appointment systems on the sentencing decisions of judges. I am interested in causally-identified observational work that speaks to the everyday exercise of state power.</p>
+        <p style="font-size: 14px; line-height: 1.65; margin: 0 0 24px;">Before Columbia, I studied Political Science at Reed College and worked on political campaigns across the Pacific Northwest. Outside of working hours, I can often be found at one of New York's many arthouse movie theaters!</p>
 
-        <h2 id="papers" style="font-family: Georgia, 'Times New Roman', serif; font-size: 17px; color: #000080; border-bottom: 2px solid #c0c0c0; padding-bottom: 4px;">Working Papers</h2>
+        <div style="height: 10px;"></div>
+        <h2 id="papers" class="titlebar"><span>Working Papers</span><span class="titlebar-controls" aria-hidden="true"><span>_</span><span>□</span><span>×</span></span></h2>
 
-        <div style="margin: 12px 0 20px;">
-          <div style="font-family: 'Courier New', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #666666; margin-bottom: 4px;">Job Market Paper</div>
-          <div style="font-size: 15px; font-weight: bold; margin-bottom: 4px;">"Why Enforce? Police Discretion Under Non-Prosecution Policies"</div>
-          <div style="font-size: 13px; color: #555555; margin-bottom: 8px;">Solo-authored</div>
-          <p style="font-size: 14px; line-height: 1.6; text-align: justify; margin: 0 0 8px;">Misdemeanor enforcement relies heavily on the discretion of individual police officers, but it is unclear what motivates these enforcement decisions. Prosecutor-led reforms of the police rely on legalistic models of policing, which predict that court outcomes help motivate enforcement. However, order-maintenance models of policing argue that arrests are motivated by more immediate concerns. I test these accounts using non-prosecution policies adopted by the District Attorneys of the Bronx (2020) and Manhattan (2022), which publicly committed to declining a range of low-level, discretionary offenses. As New York City's five boroughs share one police department, mayor, and set of laws but have separate prosecutors, I can isolate the effect of prosecutorial policy on enforcement. Using a staggered-adoption synthetic control design with precinct-level arrest and summons data, I rule out declines in enforcement larger than about 18% for offenses targeted by both policies, indicating that most enforcement continued when prosecution ended. The effect varies between precincts, but this variation is not explained by racial composition, commercial activity, gentrification, or prior enforcement intensity. These findings suggest that misdemeanor arrests give police utility beyond the deterrence effect of adjudicated punishment and that reformist prosecutors will have limited leverage over the behavior of patrol officers.</p>
-          <div style="font-size: 13px;"><a href="uploads/Rubin_Why_Enforce.pdf" target="_blank" style="color: #000080;">Download PDF</a> · <a href="uploads/Rubin_Why_Enforce_Slides.pdf" target="_blank" style="color: #000080;">Slides</a></div>
+        <div class="jmp">
+          <div class="jmp-banner">&#9733; JOB MARKET PAPER &#9733;</div>
+          <div class="jmp-body">
+            <div style="font-size: 15px; font-weight: bold; margin-bottom: 4px;">"Why Enforce? Police Discretion Under Non-Prosecution Policies"</div>
+            <div style="font-size: 13px; color: #555555; margin-bottom: 8px;">Solo-authored</div>
+            <a class="teaser" href="uploads/Rubin_Why_Enforce.pdf" target="_blank" style="text-decoration: none;">
+              <img src="uploads/why_enforce_event_study.png" alt="Event study plot: estimated effect of non-prosecution policies on arrests and summons for targeted offenses stays near zero after adoption">
+              <div class="teaser-caption">Fig. 2A: Enforcement of targeted offenses, by quarter relative to policy adoption.</div>
+            </a>
+            <p style="font-size: 14px; line-height: 1.6; margin: 0 0 8px;">Misdemeanor enforcement relies heavily on the discretion of individual police officers, but it is unclear what motivates these enforcement decisions. Prosecutor-led reforms of the police rely on legalistic models of policing, which predict that court outcomes help motivate enforcement. However, order-maintenance models of policing argue that arrests are motivated by more immediate concerns. I test these accounts using non-prosecution policies adopted by the District Attorneys of the Bronx (2020) and Manhattan (2022), which publicly committed to declining a range of low-level, discretionary offenses. As New York City's five boroughs share one police department, mayor, and set of laws but have separate prosecutors, I can isolate the effect of prosecutorial policy on enforcement. Using a staggered-adoption synthetic control design with precinct-level arrest and summons data, I rule out declines in enforcement larger than about 18% for offenses targeted by both policies, indicating that most enforcement continued when prosecution ended. The effect varies between precincts, but this variation is not explained by racial composition, commercial activity, gentrification, or prior enforcement intensity. These findings suggest that misdemeanor arrests give police utility beyond the deterrence effect of adjudicated punishment and that reformist prosecutors will have limited leverage over the behavior of patrol officers.</p>
+            <div class="btn-row"><a class="btn" href="uploads/Rubin_Why_Enforce.pdf" target="_blank">&#128196; Paper (PDF)</a><a class="btn" href="uploads/Rubin_Why_Enforce_Slides.pdf" target="_blank">&#128202; Slides</a></div>
+          </div>
         </div>
 
         <div style="margin: 0 0 20px;">
           <div style="font-family: 'Courier New', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #666666; margin-bottom: 4px;">Revise &amp; Resubmit, <em>Quarterly Journal of Political Science</em></div>
           <div style="font-size: 15px; font-weight: bold; margin-bottom: 4px;">"Do Retention Elections Create Cycles in Criminal Sentencing? An Out-of-Sample Replication"</div>
           <div style="font-size: 13px; color: #555555; margin-bottom: 8px;">with Donald P. Green</div>
-          <p style="font-size: 14px; line-height: 1.6; text-align: justify; margin: 0 0 8px;">Judicial retention elections are low-salience, uncompetitive events where incumbents virtually never lose. However, some articles have found that criminal court judges become significantly more punitive as these safe elections approach. Using newly available data spanning multiple election cycles, we conduct an out-of-sample replication of the most widely cited article in this literature (Huber and Gordon 2004) and find no evidence of election cycle effects.</p>
-          <div style="font-size: 13px;"><a href="uploads/Rubin_Green_Retention_Elections.pdf" target="_blank" style="color: #000080;">Download PDF</a></div>
+          <p style="font-size: 14px; line-height: 1.6; margin: 0 0 8px;">Judicial retention elections are low-salience, uncompetitive events where incumbents virtually never lose. However, some articles have found that criminal court judges become significantly more punitive as these safe elections approach. Using newly available data spanning multiple election cycles, we conduct an out-of-sample replication of the most widely cited article in this literature (Huber and Gordon 2004) and find no evidence of election cycle effects.</p>
+          <div class="btn-row"><a class="btn" href="uploads/Rubin_Green_Retention_Elections.pdf" target="_blank">&#128196; Paper (PDF)</a></div>
         </div>
 
-        <h2 id="cv" style="font-family: Georgia, 'Times New Roman', serif; font-size: 17px; color: #000080; border-bottom: 2px solid #c0c0c0; padding-bottom: 4px;">Curriculum Vitae</h2>
-        <p style="font-size: 13px; margin: 10px 0;"><a href="uploads/Rubin_CV_July26.pdf" target="_blank" style="color: #000080;">Download full CV (PDF)</a></p>
+        <div style="height: 6px;"></div>
+        <h2 id="cv" class="titlebar"><span>Curriculum Vitae</span><span class="titlebar-controls" aria-hidden="true"><span>_</span><span>□</span><span>×</span></span></h2>
+        <div class="btn-row" style="margin: 0 0 10px;"><a class="btn" href="uploads/Rubin_CV_July26.pdf" target="_blank">&#128196; Full CV (PDF)</a></div>
+        <p style="font-size: 13px; color: #555555; margin: 0 0 10px;">Selected highlights below; publications, grants, and works in progress are in the full CV.</p>
 
         <div style="font-size: 13px; font-weight: bold; color: #000080; margin: 14px 0 4px;">Education</div>
         <table width="100%" style="font-size: 14px; border-collapse: collapse; margin-bottom: 14px;">
@@ -149,18 +234,6 @@
           <tr><td style="padding: 2px 0;">B.A. Political Science (2020)</td></tr>
         </table>
 
-        <div style="font-size: 13px; font-weight: bold; color: #000080; margin: 14px 0 4px;">Book Chapters</div>
-        <p style="font-size: 14px; line-height: 1.6; text-align: justify; margin: 0 0 14px;">Christian Breunig and Chris Koski with Nat Rubin. "How Interests and Executives Set Public Policy in Four States." In: <em>Means, Motives and Opportunities: How Executives and Interest Groups Set Public Policy.</em> Cambridge University Press, 2024.</p>
-
-        <div style="font-size: 13px; font-weight: bold; color: #000080; margin: 14px 0 4px;">Works in Progress</div>
-        <div style="font-size: 14px; margin-bottom: 6px;">Dissertation: <em>Essays in Carceral State Politics</em></div>
-        <ul style="font-size: 14px; margin: 0 0 8px; padding-left: 20px;">
-          <li style="margin-bottom: 4px;">"Why Enforce? Police Discretion Under Non-Prosecution Policies"</li>
-          <li style="margin-bottom: 4px;">"The Digital Haystack: Is More Evidence Better?"</li>
-          <li style="margin-bottom: 4px;">"Election Cycles in Criminal Sentencing"</li>
-        </ul>
-        <p style="font-size: 14px; text-align: justify; margin: 0 0 14px;">"Do Retention Elections Create Cycles in Criminal Sentencing? An Out-of-Sample Replication" with Donald P. Green. Revise &amp; Resubmit, <em>Quarterly Journal of Political Science</em>.</p>
-
         <div style="font-size: 13px; font-weight: bold; color: #000080; margin: 14px 0 4px;">Teaching</div>
         <ul style="font-size: 14px; margin: 0 0 14px; padding-left: 20px;">
           <li style="margin-bottom: 4px;">Spring 2026: "American Urban Politics," TA for Carlos Vargas-Ramos</li>
@@ -169,11 +242,6 @@
           <li style="margin-bottom: 4px;">Fall 2024: "Voting and American Politics," TA for Robert Erikson</li>
           <li style="margin-bottom: 4px;">Spring 2024: "Race and the Carceral State," TA for Andrew McCall</li>
           <li style="margin-bottom: 4px;">Fall 2023: "Data Science for Political Analytics," TA for Greg Wawro</li>
-        </ul>
-
-        <div style="font-size: 13px; font-weight: bold; color: #000080; margin: 14px 0 4px;">Grants</div>
-        <ul style="font-size: 14px; margin: 0 0 14px; padding-left: 20px;">
-          <li style="margin-bottom: 4px;">Graduate Student Research Grant, Columbia University Institute for Social and Economic Research and Policy</li>
         </ul>
 
         <div style="font-size: 13px; font-weight: bold; color: #000080; margin: 14px 0 4px;">Conferences &amp; Presentations</div>
@@ -188,7 +256,7 @@
     </tr>
   </table>
 
-  <div style="background: #000080; color: #c0c0c0; font-family: 'Courier New', monospace; font-size: 11px; text-align: center; padding: 10px;">© 2026 Nat Rubin</div>
+  <div style="background: #000080; color: #c0c0c0; font-family: 'Courier New', monospace; font-size: 11px; text-align: center; padding: 10px;">© 2026 Nat Rubin &nbsp;·&nbsp; Last updated: October 12, 2026</div>
 
 </div>
 </body>
