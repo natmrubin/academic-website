@@ -112,6 +112,45 @@
   }
   .header-text { text-align: center; }
 
+  /* Scrolling news ticker */
+  .ticker {
+    display: flex;
+    align-items: stretch;
+    margin: 14px 16px;
+    border: 2px inset #d8d8d8;
+    background: #000000;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    overflow: hidden;
+  }
+  .ticker-label {
+    flex-shrink: 0;
+    background: #c0c0c0;
+    color: #000080;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-right: 2px outset #d8d8d8;
+    z-index: 1;
+  }
+  .ticker-window { flex: 1; overflow: hidden; white-space: nowrap; }
+  .ticker-track {
+    display: inline-block;
+    padding: 4px 0;
+    color: #33ff33;
+    animation: ticker-scroll 28s linear infinite;
+  }
+  .ticker-track span { padding-right: 3em; }
+  .ticker-track a { color: #ffd700; }
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-window { overflow-x: auto; }
+    .ticker-track { animation: none; }
+  }
+
   /* Sidebar + content layout */
   .layout { width: 100%; border-collapse: collapse; }
   .sidebar {
@@ -190,6 +229,13 @@
       <div class="badges">
         <span style="background: #000080; color: #ffffff; padding: 5px 12px; border: 2px outset rgba(255,255,255,0.4);">nmr2162 [at] columbia.edu</span>
       </div>
+    </div>
+  </div>
+
+  <div class="ticker" role="marquee" aria-label="News">
+    <div class="ticker-label">NEWS &#9658;</div>
+    <div class="ticker-window">
+      <div class="ticker-track"><span>&#9733; NEW: Revise &amp; Resubmit at the <em>Quarterly Journal of Political Science</em></span><span>&#9733; Job market paper: <a href="#papers">&ldquo;Why Enforce? Police Discretion Under Non-Prosecution Policies&rdquo;</a></span><span>&#9733; <a href="uploads/Rubin_Why_Enforce_Slides.pdf" target="_blank">Job talk slides</a> now posted</span><span>&#9733; Presented at APSA 2026 in Boston</span><span aria-hidden="true" style="padding:0"><span>&#9733; NEW: Revise &amp; Resubmit at the <em>Quarterly Journal of Political Science</em></span><span>&#9733; Job market paper: <a tabindex="-1" href="#papers">&ldquo;Why Enforce? Police Discretion Under Non-Prosecution Policies&rdquo;</a></span><span>&#9733; <a tabindex="-1" href="uploads/Rubin_Why_Enforce_Slides.pdf" target="_blank">Job talk slides</a> now posted</span><span>&#9733; Presented at APSA 2026 in Boston</span></span></div>
     </div>
   </div>
 
