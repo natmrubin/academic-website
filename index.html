@@ -151,17 +151,8 @@
     .ticker-track { animation: none; }
   }
 
-  /* Sidebar + content layout */
+  /* Content layout */
   .layout { width: 100%; border-collapse: collapse; }
-  .sidebar {
-    width: 150px;
-    background: #f0f0f0;
-    border-right: 1px solid #999999;
-    padding: 16px;
-    font-family: 'Courier New', monospace;
-    font-size: 13px;
-    vertical-align: top;
-  }
   .main-content { padding: 20px 26px; vertical-align: top; }
 
   @media (max-width: 620px) {
@@ -174,20 +165,6 @@
 
     /* Collapse table layout to stacked blocks */
     .layout, .layout tbody, .layout tr { display: block; width: 100%; }
-
-    .sidebar {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-      border-right: none;
-      border-bottom: 1px solid #999999;
-      padding: 10px 16px;
-    }
-
-    /* Turn vertical sidebar nav into a horizontal strip */
-    .sidebar-inner { display: flex; align-items: baseline; gap: 0; flex-wrap: wrap; }
-    .sidebar-heading { margin-right: 12px; margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
-    .sidebar-link { display: inline; margin-bottom: 0; margin-right: 12px; }
 
     .main-content { display: block; width: 100%; box-sizing: border-box; padding: 16px; }
 
@@ -241,14 +218,6 @@
 
   <table class="layout">
     <tr>
-      <td class="sidebar">
-        <div class="sidebar-inner">
-          <div class="sidebar-heading" style="font-weight: bold; color: #000080; margin-bottom: 10px; border-bottom: 1px solid #c0c0c0; padding-bottom: 4px;">CONTENTS</div>
-          <div class="sidebar-link" style="margin-bottom: 8px;"><a href="#about" style="color: #000080;">About</a></div>
-          <div class="sidebar-link" style="margin-bottom: 8px;"><a href="#papers" style="color: #000080;">Working Papers</a></div>
-          <div class="sidebar-link" style="margin-bottom: 8px;"><a href="#cv" style="color: #000080;">Curriculum Vitae</a></div>
-        </div>
-      </td>
       <td class="main-content">
 
         <h2 id="about" class="titlebar"><span>About</span><span class="titlebar-controls" aria-hidden="true"><span>_</span><span>□</span><span>×</span></span></h2>
